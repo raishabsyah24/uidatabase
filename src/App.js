@@ -1,34 +1,8 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
+import Login from "./Pages/Login";
 import React, { Component } from "react";
 
 
@@ -45,6 +19,9 @@ export default class App extends Component {
           >
             <Header />
             <Switch>
+            <Route path="/Login">
+                <Login />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
@@ -53,10 +30,10 @@ export default class App extends Component {
           </div>
         </Router>
       );
-      function Logout() {
-        localStorage.clear("token");
-        window.location.href = "http://localhost:3000";
-      }
+      // function Logout() {
+      //   localStorage.clear("token");
+      //   window.location.href = "http://localhost:3000";
+      // }
     } else {
       return (
         <Router>
@@ -68,6 +45,9 @@ export default class App extends Component {
           >
             <Header />
             <Switch>
+            <Route path="/Login">
+                <Login />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
