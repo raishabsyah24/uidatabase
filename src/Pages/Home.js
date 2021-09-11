@@ -1,60 +1,28 @@
-import React, { Component } from "react";
-import {
-  Container,
-  FormControl,
-  Input,
-  InputAdornment,
-  Typography,
-} from "@material-ui/core";
-import { Search } from "@material-ui/icons";
-
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 class Home extends Component {
-  render() {
-    return (
-      <div>
-        <Container style={{ marginTop: "50px" }}>
-          <div
-            style={{
-              backgroundColor: "rgb(245, 0, 87)",
-              padding: "10px",
-              borderRadius: "6px",
-              color: "#fff",
-              fontWeight: "bold",
-              fontSize: "20px",
-              marginBottom: "50px"
-            }}
-          >
-            {/* <Typography>{login.message}</Typography> */}
-          </div>
-          <form method="get" action="/events" autoComplete="off">
-            <FormControl fullWidth>
-              <Input
-                id="input-with-icon-adornment"
-                name="title"
-                placeholder="Search"
-                startAdornment={
-                  <InputAdornment position="start">
-                    <Search />
-                  </InputAdornment>
-                }
-              />
-            </FormControl>
-          </form>
-        </Container>
-        <Container style={{ marginTop: "20px" }}>
-          <Typography
-            variant="h4"
-            style={{ fontWeight: "bold", marginBottom: "10px" }}
-            color="secondary"
-          >
-            Category
-          </Typography>
-        </Container>
-      </div>
+  render (){
+    return(
+<Carousel>
+                <div>
+                    <img src="assets/1.jpeg" />
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                    <img src="assets/2.jpeg" />
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                    <img src="assets/3.jpeg" />
+                    <p className="legend">Legend 3</p>
+                </div>
+            </Carousel>
     );
   }
 }
-
-
 export default Home;
+
+
